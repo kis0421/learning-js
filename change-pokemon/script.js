@@ -3,15 +3,7 @@ const inputRow = document.querySelector("#inputRow");
 const inputColumn = document.querySelector("#inputColumn");
 
 function render() {
-  let targetElements = "";
-  for (let column = 0; column < inputColumn.value; column++) {
-    let columnChildElement = "";
-    for (let row = 0; row < inputRow.value; row++) {
-      columnChildElement += `<img src="./image/pikachu.png" />`;
-    }
-    targetElements += `<div>${columnChildElement}</div>`;
-  }
-  pokemonWrap.innerHTML = targetElements
+  pokemonWrap.innerHTML = `<div>${`<img src="./image/pikachu.png" />`.repeat(inputRow.value)}</div>`.repeat(inputColumn.value)
 }
 
 function changeInput(target, fn) {
