@@ -19,5 +19,13 @@ function render() {
 
   pokemonWrap.innerHTML = targetElements
 }
+function changeInput(target, fn) {
+  if (target === "row") {
+    inputRow.value = fn(parseInt(inputRow.value, 10));
+  } else {
+    inputColumn.value = fn(parseInt(inputColumn.value, 10));
+  }
+  render()
+}
 
 render();

@@ -35,11 +35,14 @@
       <br />
       <div>
         <div>
-          <button>가로 + 1</button>
-          <button>세로 + 1</button>
-          <button>가로 - 1</button>
-          <button>세로 - 1</button>
-          <button>세로 * 2</button>
+          <button onclick="changeInput('row', (num) => num + 1)">가로 + 1</button>
+          <button onclick="changeInput('row', (num) => num - 1)">가로 - 1</button>
+
+          <button onclick="changeInput('column', (num) => num + 1)">세로 + 1</button>
+          <button onclick="changeInput('column', (num) => num - 1)">세로 - 1</button>
+
+          <button onclick="changeInput('row', (num) => num * 2 )">가로 * 2</button>
+          <button onclick="changeInput('column', (num) => num * 2)">세로 * 2</button>
         </div>
         <br />
 
