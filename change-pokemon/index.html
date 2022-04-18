@@ -7,26 +7,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="./script.js" defer></script>
+  <style>
+    #pokemonWrap img {
+      width: 100px;
+      outline: 1px solid #dedede;
+    }
+
+    #pokemonWrap div {
+      white-space: nowrap;
+    }
+  </style>
 </head>
 
 <body>
   <div>
     <header>
-      <div>
-        <span>가로</span>
-        <input type="number" id="inputRow">
-      </div>
-      <div>
-        <span>세로</span>
-        <input type="number" id="inputColumn">
-      </div>
+      <section>
+        <div>
+          <span>가로</span>
+          <input type="number" name="row" id="inputRow" value="10" onkeyup="render()">
+        </div>
+        <div>
+          <span>세로</span>
+          <input type="number" name="column" id="inputColumn" value="10" onkeyup="render()">
+        </div>
+      </section>
       <br />
       <div>
-        <button>가로세로 + 1</button>
-        <button>가로세로 - 1</button>
-        <button>가로새로 * 2</button>
-      </div>
-      <br />
+        <div>
+          <button>가로 + 1</button>
+          <button>세로 + 1</button>
+          <button>가로 - 1</button>
+          <button>세로 - 1</button>
+          <button>세로 * 2</button>
+        </div>
+        <br />
 
     </header>
     <br />
