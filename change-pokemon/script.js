@@ -40,7 +40,7 @@ function render() {
   if (inputColumnValue - pokemonWrap.childElementCount > 0) {
     // column.value - div element.length (input값과 실제 보이는 개수의 차이) 만큼 element를 만들어 열을 추가해줌.
     const textElements = `<div>${`<img src="./image/pikachu.png" />`.repeat(inputRowValue)}</div>`.repeat(inputColumnValue - pokemonWrap.childElementCount);
-    pokemonWrap.innerHTML += textElements;
+    pokemonWrap.insertAdjacentHTML("beforeend", textElements)
     // 입력된 열의 값이 실제 div element보다 클 경우    
   } else if (inputColumnValue - pokemonWrap.childElementCount < 0) {
     // input value 값과 element길이가 동일할때까지 열을 지워줌
