@@ -11,10 +11,21 @@
     #pokemonWrap img {
       width: 100px;
       outline: 1px solid #dedede;
+      animation: outline 1s
     }
 
     #pokemonWrap div {
       white-space: nowrap;
+    }
+
+    @keyframes outline {
+      from {
+        outline: 1px solid black;
+      }
+
+      to {
+        outline: 1px solid #dedede;
+      }
     }
   </style>
 </head>
