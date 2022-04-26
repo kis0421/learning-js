@@ -3,15 +3,16 @@ document.querySelector("#app").innerHTML = `
     <section>
       <div>
         <span>가로</span>
-        <input type="number" name="row" id="inputRow" value="10" onkeyup="render()">
+        <input type="number" name="row" id="inputRow" value="10">
       </div>
       <div>
         <span>세로</span>
-        <input type="number" name="column" id="inputColumn" value="10" onkeyup="render()">
+        <input type="number" name="column" id="inputColumn" value="10">
       </div>
     </section>
     <br />
     <div id="buttonWrap">
+
       <button onclick="setRow((num) => num + 1);render();">가로 + 1</button>
       <button onclick="setRow((num) => num - 1);render();">가로 - 1</button>
 
@@ -32,15 +33,32 @@ const inputColumn = document.querySelector("#inputColumn");
 
 render();
 
-function render() {
-  pokemonWrap.innerHTML = `<div>${`<img src="./image/pikachu.png" />`.repeat(inputRow.value)}</div>`.repeat(inputColumn.value)
+function pokemon(props) {
+  return `<img src="./image/${props.type}.png" />`;
 }
+
+function app() {
+  const pokemons = new Array(row)
+    .fill(false)
+    .map((_, index) => pokemon({ type: index % 2 === 0 ? "squirtle" : "pikachu" }))
+    .join("");
+
+  return `<div>${pokemons}</div>`.repeat(column);
+}
+
+function render() {
+  pokemonWrap.innerHTML = app();
+}
+
+let row = 1;
+let column = 1;
 
 function setRow(fn) {
-  inputRow.value = fn(parseInt(inputRow.value, 10));
+  row = fn(row);
 }
 
+
 function setColumn(fn) {
-  inputColumn.value = fn(parseInt(inputColumn.value, 10));
+  column = fn(column);
 }
 
