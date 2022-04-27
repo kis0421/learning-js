@@ -1,3 +1,6 @@
+let row = 10;
+let column = 10;
+
 document.querySelector("#app").innerHTML = `
     <header>
     <section>
@@ -49,9 +52,6 @@ function app() {
 function render() {
   pokemonWrap.innerHTML = app();
 }
-
-let row = 1;
-let column = 1;
 
 function setRow(fn) {
   row = fn(row);
