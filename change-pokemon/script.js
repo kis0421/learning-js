@@ -34,8 +34,6 @@ const pokemonWrap = document.querySelector("#pokemonWrap");
 const inputRow = document.querySelector("#inputRow");
 const inputColumn = document.querySelector("#inputColumn");
 
-render();
-
 function pokemon(props) {
   return `<img src="./image/${props.type}.png" />`;
 }
@@ -62,3 +60,5 @@ function setColumn(fn) {
   column = fn(column);
 }
 
+
+render();
