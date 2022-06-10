@@ -7,7 +7,9 @@ function getCombinations(arr, n) {
   arr.forEach((fixed, index, origin) => {
     const rest = origin.slice(index + 1);
     const combinations = getCombinations(rest, n - 1);
-    results.push(...combinations.map((el) => [fixed, ...el]));
+    for(const ele of combinations.map((el) => [fixed, ...el])){
+     results.push(ele); 
+    }
   });
   return results;
 }
