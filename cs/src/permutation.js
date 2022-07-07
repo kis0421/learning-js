@@ -6,9 +6,11 @@ function getPermutation(arr, n) {
   }
   arr.forEach((fixed, index, origin) => {
     const rest = origin.filter((_, idx) => idx !== index);
-    const permutations = getPermutation(rest, n - 1)
-    const resultPermutation = permutations.map((v) => [fixed, ...v])
-    result.push(...resultPermutation);
+    const permutations = getPermutation(rest, n - 1);
+    const resultPermutation = permutations.map((v) => [fixed, ...v]);
+    for (const ele of resultPermutation) {
+       result.push(ele);
+    }
   })
 
   return result
