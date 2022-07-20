@@ -17,12 +17,20 @@ for (let i = 0; i < 10; i++) {
 }
 
 //-----------
-var vv = 4;
-function aaa() {
+function testHoisting() {
   console.log(vv); // undefined;
   var vv = 1;
   console.log(vv);
 }
 console.log(vv);
-aaa();
+testHoisting();
 console.log(vv);
+
+//-----------
+function testGlobalVariable() {
+  // console.log(vv);
+  adad = 1;
+  console.log(adad);
+}
+testGlobalVariable();
+console.log(adad,"v");
