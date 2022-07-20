@@ -15,3 +15,14 @@ for (let i = 0; i < 10; i++) {
     console.log(i);
   }, i * 100);
 }
+
+//-----------
+var vv = 4;
+function aaa() {
+  console.log(vv); // undefined;
+  var vv = 1;
+  console.log(vv);
+}
+console.log(vv);
+aaa();
+console.log(vv);
