@@ -16,6 +16,12 @@ for (let i = 0; i < 10; i++) {
   }, i * 100);
 }
 
+for (const i = 0; i < 10; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, i * 100);
+}
+
 //-----------
 function testHoisting() {
   console.log(vv); // undefined;
