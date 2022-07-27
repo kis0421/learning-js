@@ -1,3 +1,9 @@
+function saveVariable(){
+  z = a
+}
+saveVariable();
+console.log(z)
+
 for (var i = 0; i < 10; i++) {
   setTimeout(() => {
     console.log(i);
